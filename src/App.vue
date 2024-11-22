@@ -1,5 +1,5 @@
 <script setup>
-import { computed, reactive } from 'vue';
+import { reactive } from 'vue';
 import Cabecalho from './components/Cabecalho.vue';
 import Formulario from './components/Formulario.vue';
 import ListaDeTarefas from './components/ListaDeTarefas.vue';
@@ -30,7 +30,7 @@ const getTarefasFinalizadas = () => {
   return estado.tarefas.filter(tarefa => tarefa.finalizada)
 }
 
-const  getTarefasFiltradas = computed(() =>{
+const  getTarefasFiltradas =() =>{
   const {filtro} = estado;
 
   switch(filtro) {
@@ -41,7 +41,7 @@ const  getTarefasFiltradas = computed(() =>{
     default:
       return estado.tarefas;
   }
-});
+};
 
 const cadastraTarefa = () =>{
   const tarefaNova = {
